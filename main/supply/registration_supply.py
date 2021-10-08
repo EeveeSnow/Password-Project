@@ -1,5 +1,6 @@
 import sqlite3
-from db_supply import database_list
+
+
 class RegSupply():
     def __init__(self, nick, pas):
         self.n = nick
@@ -24,11 +25,9 @@ class RegSupply():
         return out, reason
     
     def add(self):
-        base = sqlite3.connect(database_list.db_list[1])
+        base = sqlite3.connect("user.db")
         cur = base.cursor()
-        cur.execute("INSERT INTO userlist VALUE(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-        ("0000000000000001", self.n, self.p, "0000", "False", "False", "False", "False", "False", "None"))
+        idn = 1
+        cur.execute(f"INSERT INTO userlist VALUES({idn}, {self.n}, 'None', {self.p})")
         base.commit()
-
-RegSupply("popipo", "005")
 

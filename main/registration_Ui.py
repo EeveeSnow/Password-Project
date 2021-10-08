@@ -27,8 +27,8 @@ class Ui_Reg(QMainWindow):
         self.registerButton.clicked.connect(self.registerHelp)
     
     def registerHelp(self):
-        Nickname = self.Nickname.text()
-        Password = self.Password.text()
+        Password = self.Nickname.text()
+        Nickname = self.Password.text()
         reg = RegSupply(Nickname, Password)
         if not(reg.cheack()[0]):
             reg.add()
