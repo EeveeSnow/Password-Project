@@ -7,7 +7,7 @@ from PyQt5.QtWidgets import (
     QWidget,
 )
 
-class UI_Main(object):
+class UI_Main(QWidget):
     def __init__(self):
         super().__init__()
         self.setupUI()

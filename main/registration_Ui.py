@@ -1,13 +1,16 @@
-import sys
+
 from supply.registration_supply import RegSupply
 #типо импорт для интерфейса
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
-from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
+from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QVBoxLayout
 from PyQt5.QtCore import QRect, Qt
 
 class Ui_Reg(QWidget):
-    def setupUI(self, Reg):       
+    def __init__(self):
+        super().__init__()
+
+        layout = QVBoxLayout() 
+        self.resize(1280, 720)   
+
         self.Nickname = QLineEdit(self)
         self.Nickname.setGeometry(QRect(230, 220, 170, 30))
         self.Nickname.setInputMethodHints(Qt.ImhHiddenText)
@@ -22,8 +25,14 @@ class Ui_Reg(QWidget):
         self.registerButton.setGeometry(QRect(230, 280, 170, 40))
         self.registerButton.setText("Register")
         self.registerButton.clicked.connect(self.registerHelp)
+      
+        layout.addWidget(self.Nickname)
+        layout.addWidget(self.Password)
+        layout.addWidget(self.registerButton)
+        
+        self.setLayout(layout)
 
-        QtCore.QMetaObject.connectSlotsByName(Reg)
+        # QtCore.QMetaObject.connectSlotsByName(Reg)
 
     def registerHelp(self):
         Password = self.Nickname.text()
@@ -35,10 +44,10 @@ class Ui_Reg(QWidget):
             reg.add()
 
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    Reg = QtWidgets.QMainWindow()
-    ui = Ui_Reg()
-    ui.initUI(Reg)
-    Reg.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+#     app = QtWidgets.QApplication(sys.argv)
+#     Reg = QtWidgets.QMainWindow()
+#     ui = Ui_Reg()
+#     ui.setupUI(Reg)
+#     Reg.show()
+#     sys.exit(app.exec_())

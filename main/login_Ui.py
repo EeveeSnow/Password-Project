@@ -1,13 +1,16 @@
 import sys
-from supply.loggin_supply import LogSupply
+from supply.login_supply import LogSupply
 #типо импорт для интерфейса
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QWidget
-from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
+from PyQt5.QtWidgets import QPushButton, QWidget, QLineEdit, QVBoxLayout, QStackedWidget
 from PyQt5.QtCore import QRect, Qt
 
 class Ui_Log(QWidget):
-    def setupUI(self, Log):       
+    def __init__(self):
+        super().__init__()
+
+        layout = QVBoxLayout() 
+        self.resize(1280, 720)
+
         self.Nickname = QLineEdit(self)
         self.Nickname.setGeometry(QRect(230, 220, 170, 30))
         self.Nickname.setInputMethodHints(Qt.ImhHiddenText)
@@ -23,7 +26,12 @@ class Ui_Log(QWidget):
         self.registerButton.setText("Loggin")
         self.registerButton.clicked.connect(self.registerHelp)
         
-        QtCore.QMetaObject.connectSlotsByName(Log)
+        
+        layout.addWidget(self.Nickname)
+        layout.addWidget(self.Password)
+        layout.addWidget(self.registerButton)
+        
+        self.setLayout(layout)
     
     def registerHelp(self):
         Password = self.Nickname.text()

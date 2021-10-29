@@ -1,45 +1,47 @@
 import sys
 #типо импорт для интерфейса
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
+from PyQt5.QtWidgets import QWidget, QPushButton, QVBoxLayout, QStackedWidget
 from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
 from PyQt5.QtCore import QRect, Qt
+
+from registration_Ui import Ui_Reg
+from login_Ui import Ui_Log
 
 class UI_Start(QWidget):
     def __init__(self):
         super().__init__()
-        self.setupUI(self)
 
-
-    def setupUI(self, start):
-        self.centralwidget = QtWidgets.QWidget(self)
-        self.centralwidget.setObjectName("centralwidget")
-
-        self.menubar = QtWidgets.QMenuBar(self)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 500, 21))
-        self.menubar.setObjectName("menubar")
-
-        self.statusbar = QtWidgets.QStatusBar(self)
-        self.statusbar.setObjectName("statusbar")
-
-
-        self.registerButton = QPushButton(self.centralwidget)
+        self.layout2 = QVBoxLayout() 
+        
+        self.registerButton = QPushButton("Register", self)
         self.registerButton.setGeometry(QRect(250, 280, 170, 40))
-        self.registerButton.setText("Registeration")
         self.registerButton.clicked.connect(self.registr)
 
-        self.registerButton = QPushButton(self.centralwidget)
-        self.registerButton.setGeometry(QRect(250, 380, 170, 40))
-        self.registerButton.setText("Loggin")
-        self.registerButton.clicked.connect(self.loggin)
+        self.loginButton = QPushButton("Login", self)
+        self.loginButton.setGeometry(QRect(250, 380, 170, 40))
+        self.loginButton.clicked.connect(self.loggin)
+
         
-        QtCore.QMetaObject.connectSlotsByName(self)
+        self.layout2.addWidget(self.registerButton)
+        self.layout2.addWidget(self.loginButton)
+        self.setLayout(self.layout2)
     
     def registr(self):
-        pass
-    
+        self.layout2.itemAt(0).widget().deleteLater()
+        self.layout2.itemAt(1).widget().deleteLater()
+        self.stackedWidget = QStackedWidget()
+        self.stackedWidget.addWidget(Ui_Reg())
+        self.layout2.addWidget(self.stackedWidget)
+   
     def loggin(self):
-        pass
+        self.layout2.itemAt(0).widget().deleteLater()
+        self.layout2.itemAt(1).widget().deleteLater()
+        self.stackedWidget = QStackedWidget()
+        self.stackedWidget.addWidget(Ui_Log())
+        self.layout2.addWidget(self.stackedWidget)
+
+
 
 
 
@@ -47,6 +49,5 @@ class UI_Start(QWidget):
 #     app = QtWidgets.QApplication(sys.argv)
 #     self = QtWidgets.QMainWindow()
 #     ui = UI_Start()
-#     ui.setupUI(self)
-#     self.show()
+#     ui.show()
 #     sys.exit(app.exec_())
