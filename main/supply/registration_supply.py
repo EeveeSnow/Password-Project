@@ -28,6 +28,7 @@ class RegSupply():
         base = sqlite3.connect("user.db")
         cur = base.cursor()
         idn = 1
-        cur.execute(f"INSERT INTO userlist VALUES({idn}, {self.n}, 'None', {self.p})")
+        info = f'INSERT INTO userlist VALUES("{str(idn)}", "{self.n}", NULL,"{self.p}")'
+        cur.execute(info)
         base.commit()
 

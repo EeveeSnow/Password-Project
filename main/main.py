@@ -1,58 +1,42 @@
+import PyQt5
+from PyQt5.QtWidgets import QMainWindow, QApplication
+from start_Ui import UI_Start as start
+from registration_Ui import Ui_Reg as reg
+from loggin_Ui import Ui_Log as log
+from supply.start_supply import UI_Main as main
 import sys
-import sqlite3
 
-#типо импорт для интерфейса
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
-from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
-from PyQt5.QtCore import QRect, Qt
-
-now_id = None
-class Ui_Main(QMainWindow):
+class Main(QMainWindow,main):
     def __init__(self):
-        super().__init__()
-        self.initUI()
-        self.gridLayoutWidget = QWidget(self)
-        self.gridLayoutWidget.setGeometry(QRect(230, 120, 631, 371))
-
-    def initUI(self) -> None:
-        pass
-
-
-class RegistrationOrLogin(QWidget):
-    def __init__(self, *args):
-        super().__init__()
-        self.initUI(args)
-    
-    def initUI(self, args):
-        self.btn = QPushButton('Другая форма', self)
-        self.btn.resize(self.btn.sizeHint())
-        self.btn.move(100, 100)
-
-
-class Registration(QWidget):
-    def __init__(self, *args):
-        super().__init__()
-        self.initUI(args)
-    
-    def initUI(self, args):
-        self.setGeometry(QRect(0, 0, 631, 371))
-        self.pushButton_3 = QPushButton(self.widget_2)
-        self.pushButton_3.setGeometry(QRect(230, 280, 171, 41))
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.lineEdit = QLineEdit(self.widget_2)
-        self.lineEdit.setGeometry(QRect(232, 220, 161, 31))
-        self.lineEdit.setInputMethodHints(Qt.ImhHiddenText)
-        self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit_2 = QLineEdit(self.widget_2)
-        self.lineEdit_2.setGeometry(QRect(230, 170, 161, 31))
-        self.lineEdit_2.setAutoFillBackground(False)
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
-
-
-
-if __name__ == '__main__':
+        super(Main,self).__init__()
+        self.setupUi(self)
+        self.show()
+        self.reg = Reg()
+        self.log = Log()
+        self.action_2.triggered.connect(self.New)
+        self.action.triggered.connect(self.Show)
+    def Show(self):
+        self.gridLayout.addWidget (self.reg) #Помещаем окно в gridLayout
+        self.reg.show() #Открыть дочернее окно 1
+    def New(self):
+        self.gridLayout_2.addWidget(self.log)
+        self.log.show()
+        
+ 
+class Log(QMainWindow, log):
+    def __init__(self):
+        super(Log,self).__init__()
+        self.setupUi(self)
+        self.pushButton.clicked.connect(self.Close)
+    def Close(self):
+        self.close()
+ 
+class Reg(QMainWindow,reg):
+    def __init__(self):
+        super(Reg,self).__init__()
+        self.setupUi(self)
+ 
+if __name__=='__main__':
     app = QApplication(sys.argv)
-    ex = Ui_Main()
-    ex.show()
-    sys.exit(app.exec())
+    Main.show()
+    sys.exit(app.exec_())

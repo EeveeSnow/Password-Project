@@ -1,13 +1,13 @@
 import sys
-from supply.registration_supply import RegSupply
+from supply.loggin_supply import LogSupply
 #типо импорт для интерфейса
 from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
+from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QWidget
 from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
 from PyQt5.QtCore import QRect, Qt
 
-class Ui_Reg(QWidget):
-    def setupUI(self, Reg):       
+class Ui_Log(QWidget):
+    def setupUI(self, Log):       
         self.Nickname = QLineEdit(self)
         self.Nickname.setGeometry(QRect(230, 220, 170, 30))
         self.Nickname.setInputMethodHints(Qt.ImhHiddenText)
@@ -20,25 +20,27 @@ class Ui_Reg(QWidget):
 
         self.registerButton = QPushButton(self)
         self.registerButton.setGeometry(QRect(230, 280, 170, 40))
-        self.registerButton.setText("Register")
+        self.registerButton.setText("Loggin")
         self.registerButton.clicked.connect(self.registerHelp)
-
-        QtCore.QMetaObject.connectSlotsByName(Reg)
-
+        
+        QtCore.QMetaObject.connectSlotsByName(Log)
+    
     def registerHelp(self):
         Password = self.Nickname.text()
         Nickname = self.Password.text()
-        reg = RegSupply(Nickname, Password)
-        if not(reg.cheack()[0]):
-            reg.add()
+        log = LogSupply(Nickname, Password)
+        id = log.cheack()
+        if id != -1:
+            print("OK")
         else:
-            reg.add()
+            print("NO")
 
+            
 
-if __name__ == "__main__":
-    app = QtWidgets.QApplication(sys.argv)
-    Reg = QtWidgets.QMainWindow()
-    ui = Ui_Reg()
-    ui.initUI(Reg)
-    Reg.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+#     app = QtWidgets.QApplication(sys.argv)
+#     Log = QtWidgets.QMainWindow()
+#     ui = Ui_Log()
+#     ui.initUI(Log)
+#     Log.show()
+#     sys.exit(app.exec_())

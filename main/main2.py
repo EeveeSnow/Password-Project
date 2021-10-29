@@ -1,25 +1,25 @@
 import sys
-import sqlite3
 
-#типо импорт для интерфейса
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QMainWindow
-from PyQt5.QtWidgets import QLineEdit, QLCDNumber,QLabel
-from PyQt5.QtCore import QRect, Qt
+from PyQt5.QtWidgets import (
+    QApplication,
+    QPushButton,
+    QVBoxLayout,
+    QWidget,
+)
 
-now_id = None
-class Start(QMainWindow):
+class Window(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUI()
-        self.destroy()
-        self.close()
+        self.setWindowTitle("Password hundler")
+        self.resize(1920, 1080)
+        # Create a QVBoxLayout instance
+        layout = QVBoxLayout()
+        # Add widgets to the layout
+        # Set the layout on the application's window
+        self.setLayout(layout)
 
-    def initUI(self) -> None:
-        pass
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = QApplication(sys.argv)
-    ex = Start()
-    ex.show()
-    sys.exit(app.exec())
+    window = Window()
+    window.show()
+    sys.exit(app.exec_())
