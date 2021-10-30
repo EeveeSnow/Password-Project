@@ -1,8 +1,9 @@
-
+from supply.key_supply import MasterSupply
 from supply.registration_supply import RegSupply
 #типо импорт для интерфейса
-from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QVBoxLayout
+from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QVBoxLayout, QLabel
 from PyQt5.QtCore import QRect, Qt
+
 
 class Ui_Reg(QWidget):
     def __init__(self):
@@ -21,6 +22,11 @@ class Ui_Reg(QWidget):
         self.Password.setAutoFillBackground(False)
         self.Password.setObjectName("Password")
 
+        self.Master = QLineEdit(self)
+        self.Master.setGeometry(QRect(230, 170, 170, 30))
+        self.Master.setAutoFillBackground(False)
+        self.Master.setObjectName("Master")
+
         self.registerButton = QPushButton(self)
         self.registerButton.setGeometry(QRect(230, 280, 170, 40))
         self.registerButton.setText("Register")
@@ -28,6 +34,7 @@ class Ui_Reg(QWidget):
       
         layout.addWidget(self.Nickname)
         layout.addWidget(self.Password)
+        layout.addWidget(self.Master)
         layout.addWidget(self.registerButton)
         
         self.setLayout(layout)
@@ -37,11 +44,28 @@ class Ui_Reg(QWidget):
     def registerHelp(self):
         Password = self.Nickname.text()
         Nickname = self.Password.text()
-        reg = RegSupply(Nickname, Password)
+        Master = self.Master.text()
+        reg = RegSupply(Nickname, Password, Master)
+        master = MasterSupply(Master)
         if not(reg.cheack()[0]):
-            reg.add()
+            Ui_Error(reg.cheack()[1]).show()
         else:
-            reg.add()
+            if not(master.cheack()[0]):
+                Ui_Error(master.cheack()[1]).show()
+            else:
+                reg.add()
+
+class Ui_Error(QWidget):
+    def __init__(self, error):
+        super().__init__()
+        info = error
+        layout = QVBoxLayout() 
+        self.resize(300, 200)
+        message = QLabel(self)
+        message.setText(info)
+        layout.addWidget(message)
+        self.setLayout(layout)
+
 
 
 # if __name__ == "__main__":

@@ -1,9 +1,7 @@
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWebEngineWidgets import QWebEngineView
-from PyQt5.QtCore import QUrl
-
-app = QApplication([])
-view = QWebEngineView()
-view.load(QUrl("http://www.baidu.com"))
-view.show()
-app.exec_()
+import sqlite3
+base = sqlite3.connect("user.db")
+n = "popipo"
+cur1 = base.cursor()
+cur2 = base.cursor()
+cur = base.cursor()
+print(cur1.execute(f"SELECT * FROM userlist").fetchall()[-1][0])
