@@ -26,10 +26,16 @@ class RegSupply():
         return out, reason
     
     def add(self):
-        base = sqlite3.connect("user.db")
+        base = sqlite3.connect("main/local/user.db")
         cur = base.cursor()
-        idn = int(cur.execute(f"SELECT * FROM userlist").fetchall()[-1][0]) + 1
-        info = f'INSERT INTO userlist VALUES("{str(idn)}", "{self.n}", "{self.m}","{self.p}")'
+        self.idn = int(cur.execute(f"SELECT * FROM userlist").fetchall()[-1][0]) + 1
+        info = f'INSERT INTO userlist VALUES("{str(self.idn)}", "{self.n}", "{self.m}","{self.p}")'
         cur.execute(info)
+        base.commit()
+    
+    def creator(self):
+        base = sqlite3.connect("main/local/hundler.db")
+        cur = base.cursor()
+        base.execute(f"CREATE TABLE '{self.idn}'(site, login, password, date)")
         base.commit()
 

@@ -34,40 +34,11 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(237, 237, 237);</string>
   </property>
-  <widget class="QPushButton" name="registerButton">
-   <property name="geometry">
-    <rect>
-     <x>715</x>
-     <y>325</y>
-     <width>300</width>
-     <height>70</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Segoe UI</family>
-     <pointsize>40</pointsize>
-     <stylestrategy>PreferAntialias</stylestrategy>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 35px;
-font: 40pt &quot;Segoe UI&quot;;
-color: #707070</string>
-   </property>
-   <property name="text">
-    <string>Register</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="loginButton">
    <property name="geometry">
     <rect>
-     <x>265</x>
-     <y>325</y>
+     <x>478</x>
+     <y>464</y>
      <width>300</width>
      <height>70</height>
     </rect>
@@ -90,6 +61,92 @@ color: #707070</string>
    </property>
    <property name="text">
     <string>Login</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordEdit">
+   <property name="geometry">
+    <rect>
+     <x>628</x>
+     <y>321</y>
+     <width>300</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 35px;
+font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="loginEdit">
+   <property name="geometry">
+    <rect>
+     <x>628</x>
+     <y>186</y>
+     <width>300</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 35px;
+font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>387</x>
+     <y>180</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferDefault</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+   <property name="text">
+    <string>Login:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>353</x>
+     <y>320</y>
+     <width>231</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferDefault</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+   <property name="text">
+    <string>Password:</string>
    </property>
   </widget>
  </widget>
