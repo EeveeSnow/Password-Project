@@ -2,11 +2,8 @@ import sqlite3
 
 
 class MasterSupply():
-    def __init__(self, master, nickname):
+    def __init__(self, master):
         self.m = master
-        self.n = nickname
-
-    
 
     def cheack(self):
         def isint(s):

@@ -1,7 +1,10 @@
 import sqlite3
+
+from PyQt5.uic import compileUiDir
 base = sqlite3.connect("user.db")
-n = "popipo"
-cur1 = base.cursor()
-cur2 = base.cursor()
 cur = base.cursor()
-print(cur1.execute(f"SELECT * FROM userlist").fetchall()[-1][0])
+midi = list()
+raw = cur.execute(f"SELECT * FROM userlist").fetchall()
+for i in range(len(raw)):
+    midi.append(raw[i][1:4])
+print(midi)

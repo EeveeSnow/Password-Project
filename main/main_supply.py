@@ -30,14 +30,14 @@ class Hundler(QWidget):
 
         self.setLayout(mainlayout)
     
-# app = QApplication(sys.argv)
-# hundler = Hundler()
-# hundler.show()
-# sys.exit(app.exec_()) 
+app = QApplication(sys.argv)
+hundler = Hundler()
+hundler.show()
+sys.exit(app.exec_()) 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    self = QMainWindow()
-    hundler = Hundler()
-    hundler.show()
-    sys.exit(app.exec())
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     self = QMainWindow()
+#     hundler = Hundler()
+#     hundler.show()
+#     sys.exit(app.exec())

@@ -11,7 +11,7 @@ class RegSupply():
         if len(self.n) < 3:
             out = False
             reason = "Nickname too short"
-        elif len(self.p) < 8:
+        elif len(self.p) <= 8:
             out = False
             reason = "Password too short"
         elif len(self.p) > 32:
