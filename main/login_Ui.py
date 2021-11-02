@@ -12,7 +12,7 @@ class Ui_Log(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("main/design/login.ui", self)
-        self.layout2 = QVBoxLayout() 
+        self.layout2 = QVBoxLayout()
 
         self.loginButton.clicked.connect(self.registerHelp)
         
@@ -22,11 +22,11 @@ class Ui_Log(QWidget):
         Password = self.passwordEdit.text()
         Nickname = self.loginEdit.text()
         log = LogSupply(Nickname, Password)
-        id = log.cheack()
-        if id != -1:
-            self.stackedWidget = QStackedWidget()
-            self.stackedWidget.addWidget(ui_storage())
-            self.layout2.addWidget(self.stackedWidget)
+        idn = log.cheack()
+        if idn != -1:
+            open("main/local/user.txt", "w").write(str(idn))
+            self.storage = ui_storage()
+            self.storage.show()
         else:
             self.Error_PopUp("Wrong login or password")
     

@@ -37,9 +37,9 @@
   <widget class="QWidget" name="horizontalLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
-     <width>1281</width>
+     <width>1261</width>
      <height>41</height>
     </rect>
    </property>
@@ -96,63 +96,50 @@ color: #707070</string>
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QPushButton" name="logButton">
+      <property name="styleSheet">
+       <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+      </property>
+      <property name="text">
+       <string>Log Out</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
-  <widget class="QScrollArea" name="scrollArea">
+  <widget class="QTableWidget" name="tableWidget">
    <property name="geometry">
     <rect>
-     <x>-1</x>
+     <x>10</x>
      <y>40</y>
-     <width>1281</width>
-     <height>681</height>
+     <width>1261</width>
+     <height>671</height>
     </rect>
    </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="scrollAreaWidgetContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1279</width>
-      <height>679</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(237, 237, 237);</string>
-    </property>
-    <widget class="QTableWidget" name="tableWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>1280</width>
-       <height>681</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(237, 237, 237);
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(237, 237, 237);
 font: 10pt &quot;Segoe UI&quot;;
 color: #707070</string>
-     </property>
-     <column>
-      <property name="text">
-       <string>Site</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Mail or Login</string>
-      </property>
-     </column>
-     <column>
-      <property name="text">
-       <string>Password</string>
-      </property>
-     </column>
-    </widget>
-   </widget>
+   </property>
+   <column>
+    <property name="text">
+     <string>Site</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Mail or Login</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>

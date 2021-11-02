@@ -29,11 +29,11 @@ class Ui_Reg(QWidget):
             if not(master.cheack()[0]):
                 self.Error_PopUp(master.cheack()[1])
             else:
-                reg.add()
+                idn = reg.add()
                 reg.creator()
-                self.stackedWidget = QStackedWidget()
-                self.stackedWidget.addWidget(ui_storage())
-                self.layout2.addWidget(self.stackedWidget)
+                open("main/local/user.txt", "w").write(str(idn))
+                self.storage = ui_storage()
+                self.storage.show()
     
     def Error_PopUp(self, error):
         popup = QMessageBox()

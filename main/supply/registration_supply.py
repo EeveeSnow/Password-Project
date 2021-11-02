@@ -32,6 +32,7 @@ class RegSupply():
         info = f'INSERT INTO userlist VALUES("{str(self.idn)}", "{self.n}", "{self.m}","{self.p}")'
         cur.execute(info)
         base.commit()
+        return self.idn
     
     def creator(self):
         base = sqlite3.connect("main/local/hundler.db")
