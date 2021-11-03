@@ -11,7 +11,7 @@ class LogSupply():
         cur1 = base.cursor()
         cur2 = base.cursor()
         cur = base.cursor()
-        if cur1.execute(f"SELECT * FROM userlist WHERE nickname = '{self.n}'").fetchall() == cur2.execute(f"SELECT * FROM userlist WHERE password = '{self.p}'").fetchall():
-            return cur.execute(f"SELECT * FROM userlist WHERE nickname = 'popipo'").fetchall()[0][0]
+        if cur1.execute(f"SELECT * FROM userlist WHERE nickname = '{self.n}'").fetchall() == cur2.execute(f"SELECT * FROM userlist WHERE password = '{self.p}'").fetchall() and cur1.execute(f"SELECT * FROM userlist WHERE nickname = '{self.n}'").fetchall() != []:
+            return cur.execute(f"SELECT * FROM userlist WHERE nickname = '{self.n}'").fetchall()[0][0]
         else:
             return -1

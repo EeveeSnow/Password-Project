@@ -9,7 +9,10 @@ class Load_Supply():
         base = sqlite3.connect(self.db)
         cur = base.cursor()
         midi = list()
-        raw = cur.execute(f"SELECT * FROM '{self.user}'").fetchall()
+        try:
+            raw = cur.execute(f"SELECT * FROM '{self.user}'").fetchall()
+        except:
+            raw = []
         for i in range(len(raw)):
             midi.append(raw[i][1:4])
         return midi

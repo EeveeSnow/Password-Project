@@ -34,112 +34,110 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(237, 237, 237);</string>
   </property>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QWidget" name="gridLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>0</x>
      <y>0</y>
-     <width>1261</width>
-     <height>41</height>
+     <width>1271</width>
+     <height>721</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QPushButton" name="addButton">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0">
+     <widget class="QTableWidget" name="tableWidget">
       <property name="styleSheet">
-       <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 5px;
-font: 8pt &quot;Segoe UI&quot;;
-color: #707070</string>
-      </property>
-      <property name="text">
-       <string>Add</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="deleteButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 5px;
-font: 8pt &quot;Segoe UI&quot;;
-color: #707070</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="searchButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 5px;
-font: 8pt &quot;Segoe UI&quot;;
-color: #707070</string>
-      </property>
-      <property name="text">
-       <string>Search</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="showButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 5px;
-font: 8pt &quot;Segoe UI&quot;;
-color: #707070</string>
-      </property>
-      <property name="text">
-       <string>Show Passwords</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="logButton">
-      <property name="styleSheet">
-       <string notr="true">background-color: #ededed; border: 1px solid grey;
-     border-radius: 5px;
-font: 8pt &quot;Segoe UI&quot;;
-color: #707070</string>
-      </property>
-      <property name="text">
-       <string>Log Out</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableWidget" name="tableWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>40</y>
-     <width>1261</width>
-     <height>671</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(237, 237, 237);
+       <string notr="true">background-color: rgb(237, 237, 237);
 font: 10pt &quot;Segoe UI&quot;;
 color: #707070</string>
-   </property>
-   <column>
-    <property name="text">
-     <string>Site</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Mail or Login</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Password</string>
-    </property>
-   </column>
+      </property>
+      <column>
+       <property name="text">
+        <string>Site</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Mail or Login</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Password</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="searchButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Search</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="showButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Show Passwords</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="logButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Log Out</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

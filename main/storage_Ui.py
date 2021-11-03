@@ -8,17 +8,19 @@ class ui_storage(QWidget):
     def __init__(self):
         super().__init__()
         self.id = open("main/local/user.txt", "r").read()
-        self.db = "main/local/hundler.db"
+        
+
         uic.loadUi("main/design/storage.ui", self)
         self.setWindowTitle("Password hundler")
         self.con = sqlite3.connect("user.db")
         self.tableWidget.setColumnWidth(0, 663)
         for i in range(1, 3):
-            self.tableWidget.setColumnWidth(i, 290)
+            self.tableWidget.setColumnWidth(i, 300)
         self.loadData()
         self.logButton.clicked.connect(self.log_out)
 
     def loadData(self):
+        self.db = "main/local/hundler.db"
         db = ld(self.db, self.id)
         hundle = db.midi()
         self.tableWidget.setRowCount(len(hundle))

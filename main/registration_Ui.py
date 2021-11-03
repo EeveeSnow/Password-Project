@@ -13,7 +13,7 @@ class Ui_Reg(QWidget):
         self.layout2 = QVBoxLayout() 
         uic.loadUi("main/design/register.ui", self)
         self.loginButton.clicked.connect(self.registerHelp)
-        
+        self.setFixedSize(1300, 720)
         self.setLayout(self.layout2)
 
 
@@ -32,22 +32,13 @@ class Ui_Reg(QWidget):
                 idn = reg.add()
                 reg.creator()
                 open("main/local/user.txt", "w").write(str(idn))
-                self.storage = ui_storage()
-                self.storage.show()
-    
+                self.stackedWidget = QStackedWidget()
+                self.stackedWidget.addWidget(ui_storage())
+                self.layout2.addWidget(self.stackedWidget)
+                uic.loadUi(None)
+
     def Error_PopUp(self, error):
         popup = QMessageBox()
         popup.setWindowTitle("Error")
         popup.setText(error)
-        x = popup.exec_()
-
-# class Ui_Error(QWidget):
-#     def __init__(self, error):
-#         super().__init__()
-#         info = error
-#         self.layout2 = QVBoxLayout() 
-#         self.resize(300, 200)
-#         message = QLabel(self)
-#         message.setText(info)
-#         self.layout2.addWidget(message)
-#         self.setLayout(self.layout2)
+        popup.exec_()

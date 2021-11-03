@@ -12,23 +12,28 @@ class UI_Start(QWidget):
     def __init__(self):
         super().__init__()
         uic.loadUi("main/design/start.ui", self)
-        self.layout2 = QVBoxLayout() 
-        
+        self.setWindowFlags(Qt.FramelessWindowHint)
         self.registerButton.clicked.connect(self.registr)
 
         self.loginButton.clicked.connect(self.loggin)
-
-        self.setLayout(self.layout2)
     
     def registr(self):
+        self.mainlayout.itemAt(0).layout().deleteLater()
         self.stackedWidget = QStackedWidget()
+        self.stackedWidget.resize(1280, 720)
         self.stackedWidget.addWidget(Ui_Reg())
-        self.layout2.addWidget(self.stackedWidget)
+        self.mainlayout.addWidget(self.stackedWidget)
+        print("OK")
    
     def loggin(self):
+        self.mainlayout.itemAt(0).layout().deleteLater()
         self.stackedWidget = QStackedWidget()
+        self.stackedWidget.resize(1280, 720)
         self.stackedWidget.addWidget(Ui_Log())
-        self.layout2.addWidget(self.stackedWidget)
+        self.mainlayout.addWidget(self.stackedWidget)
+        uic.loadUi("main/design/popipo.ui")
+        print("OK")
+        
 
 
 

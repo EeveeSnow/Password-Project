@@ -34,63 +34,100 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(237, 237, 237);</string>
   </property>
-  <widget class="QPushButton" name="registerButton">
+  <widget class="QWidget" name="formLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>715</x>
-     <y>325</y>
-     <width>300</width>
-     <height>70</height>
+     <x>-1</x>
+     <y>0</y>
+     <width>1281</width>
+     <height>721</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>Segoe UI</family>
-     <pointsize>40</pointsize>
-     <stylestrategy>PreferAntialias</stylestrategy>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #ededed; border: 1px solid grey;
+   <layout class="QFormLayout" name="mainlayout">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="fieldGrowthPolicy">
+     <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+    </property>
+    <property name="rowWrapPolicy">
+     <enum>QFormLayout::DontWrapRows</enum>
+    </property>
+    <property name="labelAlignment">
+     <set>Qt::AlignBottom|Qt::AlignJustify</set>
+    </property>
+    <property name="formAlignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <item row="0" column="0" colspan="2">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <layout class="QFormLayout" name="formLayout_2"/>
+        </item>
+        <item>
+         <widget class="QPushButton" name="loginButton">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>40</pointsize>
+            <stylestrategy>PreferAntialias</stylestrategy>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #ededed; border: 1px solid grey;
      border-radius: 35px;
 font: 40pt &quot;Segoe UI&quot;;
 color: #707070</string>
-   </property>
-   <property name="text">
-    <string>Register</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="loginButton">
-   <property name="geometry">
-    <rect>
-     <x>265</x>
-     <y>325</y>
-     <width>300</width>
-     <height>70</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Segoe UI</family>
-     <pointsize>40</pointsize>
-     <stylestrategy>PreferAntialias</stylestrategy>
-    </font>
-   </property>
-   <property name="autoFillBackground">
-    <bool>false</bool>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #ededed; border: 1px solid grey;
+          </property>
+          <property name="text">
+           <string>Login</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <layout class="QFormLayout" name="formLayout"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QPushButton" name="registerButton">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>40</pointsize>
+            <stylestrategy>PreferAntialias</stylestrategy>
+           </font>
+          </property>
+          <property name="autoFillBackground">
+           <bool>false</bool>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #ededed; border: 1px solid grey;
      border-radius: 35px;
 font: 40pt &quot;Segoe UI&quot;;
 color: #707070</string>
-   </property>
-   <property name="text">
-    <string>Login</string>
-   </property>
+          </property>
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>
