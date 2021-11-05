@@ -14,5 +14,5 @@ class Load_Supply():
         except:
             raw = []
         for i in range(len(raw)):
-            midi.append(raw[i][1:4])
+            midi.append(raw[i])
         return midi

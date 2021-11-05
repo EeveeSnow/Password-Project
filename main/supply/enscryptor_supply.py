@@ -1,5 +1,4 @@
 import sqlite3
-import random as rd
 import numpy as np
 
 
@@ -26,8 +25,3 @@ class enscrype():
             pas.append(newl)
         return pas
 
-idn = 0
-db = [('ponpon.com', 'ponpipon@way.com', 'Ðutun\xa0ut', '2021-11-05'), ('po', '][', '\x01utun\x8but', '2021-11-05'), ('hohololey', 'ponponwaywayway', '\x8cN%qnpåj%fsn\x07rj%lnwqx', '2021-11-06')]
-db = enscrype(db, idn)
-hundle = db.crypto()
-print(hundle)
