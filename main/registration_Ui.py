@@ -1,8 +1,9 @@
 from supply.key_supply import MasterSupply
 from supply.registration_supply import RegSupply
 #типо импорт для интерфейса
-from PyQt5.QtWidgets import QWidget, QPushButton, QLineEdit, QVBoxLayout, QLabel, QMessageBox, QStackedWidget
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QMessageBox, QApplication, QMainWindow
 from PyQt5 import uic
+import sys
 
 from storage_Ui import ui_storage
 
@@ -32,13 +33,18 @@ class Ui_Reg(QWidget):
                 idn = reg.add()
                 reg.creator()
                 open("main/local/user.txt", "w").write(str(idn))
-                self.stackedWidget = QStackedWidget()
-                self.stackedWidget.addWidget(ui_storage())
-                self.layout2.addWidget(self.stackedWidget)
-                uic.loadUi(None)
+                self.storage = ui_storage()
+                self.storage.show()
 
     def Error_PopUp(self, error):
         popup = QMessageBox()
         popup.setWindowTitle("Error")
         popup.setText(error)
         popup.exec_()
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    self = QMainWindow()
+    ui = Ui_Reg()
+    ui.show()
+    sys.exit(app.exec_())
