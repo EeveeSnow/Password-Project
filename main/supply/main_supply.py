@@ -7,7 +7,7 @@ class updater(QThread):
         super().__init__()
     
     def run(self):
-        pager = open("main/local/page.txt", "r")
+        pager = open("local/page.txt", "r")
         n = int(pager.read())
         pager.close()
         time.sleep(0.5)

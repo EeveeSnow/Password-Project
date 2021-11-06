@@ -4,20 +4,21 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QWidget
-
+from design.login import Ui_Form
 from storage_Ui import ui_storage
 from supply.login_supply import LogSupply
 
 
-class Ui_Log(QWidget):
+class Ui_Log(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi("design/login.ui", self)
+        self.setupUi(self)
+        self.setWindowTitle("Password hundler")
         self.logButton.clicked.connect(self.registerHelp)
     
     def registerHelp(self):
-        Password = self.pasEdit.text()
-        Nickname = self.logEdit.text()
+        Password = self.passwordEdit.text()
+        Nickname = self.loginEdit.text()
         log = LogSupply(Nickname, Password)
         idn = log.cheack()
         if idn != -1:

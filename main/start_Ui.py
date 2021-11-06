@@ -4,14 +4,16 @@ from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 
+from design.start import Ui_Form
 from login_Ui import Ui_Log
 from registration_Ui import Ui_Reg
 
 
-class UI_Start(QWidget):
+class UI_Start(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi("design/start.ui", self)
+        self.setupUi(self)
+        self.setWindowTitle("Password hundler")
         self.registerButton.clicked.connect(self.registr)
         self.loginButton.clicked.connect(self.login)
     

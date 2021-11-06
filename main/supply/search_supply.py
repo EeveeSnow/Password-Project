@@ -4,7 +4,7 @@ from supply.enscryptor_supply import enscrype
 
 class searcher():
     def __init__(self, idn, type, info):
-        self.db = "main/local/hundler.db"
+        self.db = "local/hundler.db"
         self.id = idn
         self.info = info
         self.type = ["site", "login", "password"][type]

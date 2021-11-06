@@ -1,10 +1,9 @@
 import sys
 
-from PyQt5 import uic
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QApplication, QDialog, QMainWindow,
                              QTableWidgetItem, QWidget)
-
+from design.storage import Ui_Form
 from design.adding import Add_Dialog as adding_ui
 from design.delete import Ui_Dialog as delete_ui
 from design.search import Search_Dialog as search_ui
@@ -15,12 +14,11 @@ from supply.load_data_supply import Load_Supply as ld
 from supply.search_supply import searcher
 
 
-class ui_storage(QWidget):
+class ui_storage(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.id = open("local/user.txt", "r").read()
-
-        uic.loadUi("design/storage.ui", self)
+        self.setupUi(self)
         self.setWindowTitle("Password hundler")
         self.tableWidget.setColumnWidth(0, 663)
         for i in range(1, 3):

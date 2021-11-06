@@ -3,18 +3,18 @@ import sys
 from PyQt5 import uic
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox,
                              QVBoxLayout, QWidget)
-
+from design.register import Ui_Form
 from storage_Ui import ui_storage
 from supply.key_supply import MasterSupply
 from supply.registration_supply import RegSupply
 
 
-class Ui_Reg(QWidget):
+class Ui_Reg(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-
-        self.layout2 = QVBoxLayout() 
-        uic.loadUi("design/register.ui", self)
+        self.setupUi(self)
+        self.setWindowTitle("Password hundler")
+        self.layout2 = QVBoxLayout()
         self.loginButton.clicked.connect(self.registerHelp)
         self.setFixedSize(1300, 720)
         self.setLayout(self.layout2)
