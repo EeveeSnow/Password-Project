@@ -1,23 +1,26 @@
 import sys
+
 from PyQt5 import uic
 from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QDialog, QWidget, QTableWidgetItem, QApplication, QMainWindow
-
-from supply.load_data_supply import Load_Supply as ld
-from supply.adding_supply import AddSupply
-from supply.enscryptor_supply import enscrype
-from supply.search_supply import searcher
-from supply.delete_supply import deletor
+from PyQt5.QtWidgets import (QApplication, QDialog, QMainWindow,
+                             QTableWidgetItem, QWidget)
 
 from design.adding import Add_Dialog as adding_ui
-from design.search import Search_Dialog as search_ui
 from design.delete import Ui_Dialog as delete_ui
+from design.search import Search_Dialog as search_ui
+from supply.adding_supply import AddSupply
+from supply.delete_supply import deletor
+from supply.enscryptor_supply import enscrype
+from supply.load_data_supply import Load_Supply as ld
+from supply.search_supply import searcher
+
+
 class ui_storage(QWidget):
     def __init__(self):
         super().__init__()
-        self.id = open("main/local/user.txt", "r").read()
+        self.id = open("local/user.txt", "r").read()
 
-        uic.loadUi("main/design/storage.ui", self)
+        uic.loadUi("design/storage.ui", self)
         self.setWindowTitle("Password hundler")
         self.tableWidget.setColumnWidth(0, 663)
         for i in range(1, 3):
@@ -30,7 +33,7 @@ class ui_storage(QWidget):
         self.deleteButton.clicked.connect(self.deletion)
 
     def loadData(self):
-        self.db = "main/local/hundler.db"
+        self.db = "local/hundler.db"
         db = ld(self.db, self.id)
         self.hundle = db.midi()
         print(self.hundle)
@@ -47,11 +50,6 @@ class ui_storage(QWidget):
             self.loadData()
         else:
             self.loadData()
-        # popup = QMessageBox()
-        # popup.
-        # popup.setWindowTitle("Error")
-        # popup.setText(error)
-        # popup.exec_()
     def search(self):
         searcherup = ui_Search(self.id)
         searcherup.exec()
@@ -66,7 +64,7 @@ class ui_storage(QWidget):
             i += 1
 
     def log_out(self):
-        open("main/local/user.txt", "w")
+        open("local/user.txt", "w")
         sys.exit()
     
     def deletion(self):
@@ -155,6 +153,6 @@ class ui_Delete(QDialog, delete_ui):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     self = QMainWindow()
-    ui = UI_Start()
+    ui = ui_storage()
     ui.show()
     sys.exit(app.exec_())

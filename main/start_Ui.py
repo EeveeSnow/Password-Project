@@ -1,14 +1,17 @@
-from PyQt5 import uic
 import sys
-from PyQt5.QtWidgets import QWidget, QStackedWidget, QApplication, QMainWindow
+
+from PyQt5 import uic
 from PyQt5.QtCore import Qt
-from registration_Ui import Ui_Reg
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
+
 from login_Ui import Ui_Log
+from registration_Ui import Ui_Reg
+
 
 class UI_Start(QWidget):
     def __init__(self):
         super().__init__()
-        uic.loadUi("main/design/start.ui", self)
+        uic.loadUi("design/start.ui", self)
         self.registerButton.clicked.connect(self.registr)
         self.loginButton.clicked.connect(self.login)
     

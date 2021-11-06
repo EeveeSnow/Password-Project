@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -34,184 +34,120 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(237, 237, 237);</string>
   </property>
-  <widget class="QWidget" name="formLayoutWidget">
+  <widget class="QPushButton" name="logButton">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1281</width>
-     <height>721</height>
+     <x>478</x>
+     <y>464</y>
+     <width>300</width>
+     <height>70</height>
     </rect>
    </property>
-   <layout class="QFormLayout" name="mainlayout">
-    <property name="sizeConstraint">
-     <enum>QLayout::SetFixedSize</enum>
-    </property>
-    <property name="fieldGrowthPolicy">
-     <enum>QFormLayout::FieldsStayAtSizeHint</enum>
-    </property>
-    <property name="rowWrapPolicy">
-     <enum>QFormLayout::DontWrapRows</enum>
-    </property>
-    <property name="labelAlignment">
-     <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-    </property>
-    <property name="formAlignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <item row="0" column="1">
-     <layout class="QFormLayout" name="formLayout_3"/>
-    </item>
-    <item row="0" column="0">
-     <layout class="QFormLayout" name="formLayout_4">
-      <item row="0" column="0">
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_6">
-          <item>
-           <widget class="QLabel" name="label_11">
-            <property name="font">
-             <font>
-              <family>Segoe UI</family>
-              <pointsize>40</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <stylestrategy>PreferDefault</stylestrategy>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">font: 40pt &quot;Segoe UI&quot;;
-color: #707070</string>
-            </property>
-            <property name="text">
-             <string>Login:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_26"/>
-          </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_27">
-            <property name="sizeConstraint">
-             <enum>QLayout::SetFixedSize</enum>
-            </property>
-            <item row="0" column="0">
-             <widget class="QLineEdit" name="logEdit">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: #ededed; border: 1px solid grey;
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
      border-radius: 35px;
 font: 40pt &quot;Segoe UI&quot;;
 color: #707070</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_7">
-          <item>
-           <layout class="QGridLayout" name="gridLayout_28"/>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
-           <layout class="QGridLayout" name="gridLayout_29">
-            <item row="0" column="0">
-             <widget class="QLabel" name="label_12">
-              <property name="font">
-               <font>
-                <family>Segoe UI</family>
-                <pointsize>40</pointsize>
-                <weight>50</weight>
-                <italic>false</italic>
-                <bold>false</bold>
-                <stylestrategy>PreferDefault</stylestrategy>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">font: 40pt &quot;Segoe UI&quot;;
-color: #707070</string>
-              </property>
-              <property name="text">
-               <string>Password:</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item>
-           <layout class="QGridLayout" name="gridLayout_30">
-            <item row="0" column="0">
-             <widget class="QLineEdit" name="pasEdit">
-              <property name="styleSheet">
-               <string notr="true">background-color: #ededed; border: 1px solid grey;
+   </property>
+   <property name="text">
+    <string>Login</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="passwordEdit">
+   <property name="geometry">
+    <rect>
+     <x>628</x>
+     <y>321</y>
+     <width>300</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
      border-radius: 35px;
 font: 40pt &quot;Segoe UI&quot;;
 color: #707070</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9">
-          <property name="spacing">
-           <number>3</number>
-          </property>
-          <property name="sizeConstraint">
-           <enum>QLayout::SetFixedSize</enum>
-          </property>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_10">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetFixedSize</enum>
-          </property>
-          <item>
-           <widget class="QPushButton" name="logButton">
-            <property name="font">
-             <font>
-              <family>Segoe UI</family>
-              <pointsize>40</pointsize>
-              <stylestrategy>PreferAntialias</stylestrategy>
-             </font>
-            </property>
-            <property name="autoFillBackground">
-             <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: #ededed; border: 1px solid grey;
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="loginEdit">
+   <property name="geometry">
+    <rect>
+     <x>628</x>
+     <y>186</y>
+     <width>300</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
      border-radius: 35px;
 font: 40pt &quot;Segoe UI&quot;;
 color: #707070</string>
-            </property>
-            <property name="text">
-             <string>Login</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </item>
-   </layout>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>387</x>
+     <y>180</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferDefault</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+   <property name="text">
+    <string>Login:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>353</x>
+     <y>320</y>
+     <width>231</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <stylestrategy>PreferDefault</stylestrategy>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+   <property name="text">
+    <string>Password:</string>
+   </property>
   </widget>
  </widget>
  <resources/>

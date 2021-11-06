@@ -1,18 +1,20 @@
-from supply.key_supply import MasterSupply
-from supply.registration_supply import RegSupply
-#типо импорт для интерфейса
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QMessageBox, QApplication, QMainWindow
-from PyQt5 import uic
 import sys
 
+from PyQt5 import uic
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QMessageBox,
+                             QVBoxLayout, QWidget)
+
 from storage_Ui import ui_storage
+from supply.key_supply import MasterSupply
+from supply.registration_supply import RegSupply
+
 
 class Ui_Reg(QWidget):
     def __init__(self):
         super().__init__()
 
         self.layout2 = QVBoxLayout() 
-        uic.loadUi("main/design/register.ui", self)
+        uic.loadUi("design/register.ui", self)
         self.loginButton.clicked.connect(self.registerHelp)
         self.setFixedSize(1300, 720)
         self.setLayout(self.layout2)
