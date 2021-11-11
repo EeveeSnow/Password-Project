@@ -37,7 +37,7 @@
   <widget class="QPushButton" name="logButton">
    <property name="geometry">
     <rect>
-     <x>478</x>
+     <x>630</x>
      <y>464</y>
      <width>300</width>
      <height>70</height>
@@ -147,6 +147,35 @@ color: #707070</string>
    </property>
    <property name="text">
     <string>Password:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="cancelButton">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>464</y>
+     <width>300</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI</family>
+     <pointsize>40</pointsize>
+     <stylestrategy>PreferAntialias</stylestrategy>
+    </font>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 35px;
+font: 40pt &quot;Segoe UI&quot;;
+color: #707070</string>
+   </property>
+   <property name="text">
+    <string>Back</string>
    </property>
   </widget>
  </widget>

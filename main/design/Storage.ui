@@ -123,6 +123,19 @@ color: #707070</string>
        </widget>
       </item>
       <item>
+       <widget class="QPushButton" name="txtButton">
+        <property name="styleSheet">
+         <string notr="true">background-color: #ededed; border: 1px solid grey;
+     border-radius: 5px;
+font: 8pt &quot;Segoe UI&quot;;
+color: #707070</string>
+        </property>
+        <property name="text">
+         <string>Convert table to txt</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QPushButton" name="logButton">
         <property name="styleSheet">
          <string notr="true">background-color: #ededed; border: 1px solid grey;
