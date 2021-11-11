@@ -1,7 +1,5 @@
 import sys
 
-from PyQt5 import uic
-from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 
 from design.start import Ui_Form
@@ -20,7 +18,6 @@ class UI_Start(QWidget, Ui_Form):
     def registr(self):
         self.reg = Ui_Reg()
         self.reg.show()
-        print("OK")
         self.hide()
         return 1
 
@@ -28,14 +25,9 @@ class UI_Start(QWidget, Ui_Form):
     def login(self):
         self.log = Ui_Log()
         self.log.show()
-        print("OK")
         self.hide()
         return 2
         
-
-
-
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -9,8 +9,8 @@ class AddSupply():
         self.mail = mail
         self.pas = password
         self.date = str(dt.date.today()).split("-")
-        self.db = "local/hundler.db"
-        self.db2 = "local/user.db"
+        self.db = "main/local/hundler.db"
+        self.db2 = "main/local/user.db"
 
     def add(self):
         base = sqlite3.connect(self.db)

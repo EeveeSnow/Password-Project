@@ -7,7 +7,7 @@ class LogSupply():
         self.p = pas
     
     def cheack(self):
-        base = sqlite3.connect("local/user.db")
+        base = sqlite3.connect("main/local/user.db")
         cur1 = base.cursor()
         cur2 = base.cursor()
         cur = base.cursor()

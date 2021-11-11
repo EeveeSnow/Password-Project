@@ -1,6 +1,5 @@
 import sys
-
-from cx_Freeze import Executable, setup
+from cx_Freeze import setup, Executable
 
 try:
     from cx_Freeze.hooks import get_qt_plugins_paths
@@ -36,7 +35,7 @@ bdist_dmg_options = {
     "volume_label": "TEST",
 }
 
-executables = [Executable("main.py", base=base, target_name="pasword_hundler")]
+executables = [Executable("main/main.py", base=base, target_name="Password_handler")]
 
 setup(
     name="simple_PyQt5",

@@ -11,7 +11,7 @@ class Hundler(QWidget):
         super().__init__()
         self.setWindowTitle("Password hundler")
         # QWidget.statusBar(self).setVisible(False)
-        idn = open("local/user.txt", "r").read()
+        idn = open("main/local/user.txt", "r").read()
         if idn == "":
             self.start = UI_Start()
             self.start.show()    

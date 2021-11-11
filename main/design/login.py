@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'login.ui'
+# Form implementation generated from reading ui file '.\login.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -24,7 +24,7 @@ class Ui_Form(object):
         Form.setMaximumSize(QtCore.QSize(1280, 720))
         Form.setStyleSheet("background-color: rgb(237, 237, 237);")
         self.logButton = QtWidgets.QPushButton(Form)
-        self.logButton.setGeometry(QtCore.QRect(478, 464, 300, 70))
+        self.logButton.setGeometry(QtCore.QRect(630, 464, 300, 70))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(40)
@@ -76,6 +76,19 @@ class Ui_Form(object):
         self.label_2.setStyleSheet("font: 40pt \"Segoe UI\";\n"
 "color: #707070")
         self.label_2.setObjectName("label_2")
+        self.cancelButton = QtWidgets.QPushButton(Form)
+        self.cancelButton.setGeometry(QtCore.QRect(310, 464, 300, 70))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(35)
+        font.setStyleStrategy(QtGui.QFont.PreferAntialias)
+        self.cancelButton.setFont(font)
+        self.cancelButton.setAutoFillBackground(False)
+        self.cancelButton.setStyleSheet("background-color: #ededed; border: 1px solid grey;\n"
+"     border-radius: 35px;\n"
+"font: 35pt \"Segoe UI\";\n"
+"color: #707070")
+        self.cancelButton.setObjectName("cancelButton")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -86,3 +99,4 @@ class Ui_Form(object):
         self.logButton.setText(_translate("Form", "Login"))
         self.label.setText(_translate("Form", "Login:"))
         self.label_2.setText(_translate("Form", "Password:"))
+        self.cancelButton.setText(_translate("Form", "Go to register"))

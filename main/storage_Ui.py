@@ -7,6 +7,7 @@ from design.storage import Ui_Form
 from design.adding import Add_Dialog as adding_ui
 from design.delete import Ui_Dialog as delete_ui
 from design.search import Search_Dialog as search_ui
+from supply.convert_supply import to_txt
 from supply.adding_supply import AddSupply
 from supply.delete_supply import deletor
 from supply.enscryptor_supply import enscrype
@@ -17,7 +18,7 @@ from supply.search_supply import searcher
 class ui_storage(QWidget, Ui_Form):
     def __init__(self):
         super().__init__()
-        self.id = open("local/user.txt", "r").read()
+        self.id = open("main/local/user.txt", "r").read()
         self.setupUi(self)
         self.setWindowTitle("Password hundler")
         self.tableWidget.setColumnWidth(0, 663)
@@ -29,12 +30,12 @@ class ui_storage(QWidget, Ui_Form):
         self.showButton.clicked.connect(self.show_pas)
         self.searchButton.clicked.connect(self.search)
         self.deleteButton.clicked.connect(self.deletion)
+        self.txtButton.clicked.connect(self.to_txt)
 
     def loadData(self):
-        self.db = "local/hundler.db"
+        self.db = "main/local/hundler.db"
         db = ld(self.db, self.id)
         self.hundle = db.midi()
-        print(self.hundle)
         self.tableWidget.setRowCount(len(self.hundle))
         rownow = 0
         for column in self.hundle:
@@ -53,16 +54,15 @@ class ui_storage(QWidget, Ui_Form):
         searcherup.exec()
 
     def show_pas(self):
-        db = enscrype(ld(self.db, self.id).midi(), self.id)
+        db = enscrype(self.hundle, self.id)
         hundle = db.crypto()
-        print(hundle)
         i = 0
         for column in hundle:
             self.tableWidget.setItem(i, 2, QTableWidgetItem(str(column)))
             i += 1
 
     def log_out(self):
-        open("local/user.txt", "w")
+        open("main/local/user.txt", "w")
         sys.exit()
     
     def deletion(self):
@@ -71,6 +71,11 @@ class ui_storage(QWidget, Ui_Form):
             self.loadData()
         else:
             self.loadData()
+    
+    def to_txt(self):
+        pas = enscrype(self.hundle, self.id).crypto()
+        t = to_txt(self.id, self.hundle, pas)
+        t.convert()
 
 
 class ui_Add(QDialog, adding_ui):
@@ -122,7 +127,6 @@ class ui_Search(QDialog, search_ui):
             rownow += 1
         db = enscrype(hundler, self.id)
         hundle = db.crypto()
-        print(hundle)
         i = 0
         for column in hundle:
             self.tableWidget.setItem(i, 2, QTableWidgetItem(str(column)))

@@ -4,7 +4,7 @@ import numpy as np
 
 class enscrype():
     def __init__(self, hundler, idn):
-        self.db2 = "local/user.db"
+        self.db2 = "main/local/user.db"
         self.id = idn
         self.hundler = hundler
         base = sqlite3.connect(self.db2)

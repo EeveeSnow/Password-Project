@@ -16,9 +16,6 @@ class Ui_Reg(QWidget, Ui_Form):
         self.setWindowTitle("Password hundler")
         self.layout2 = QVBoxLayout()
         self.loginButton.clicked.connect(self.registerHelp)
-        self.setFixedSize(1300, 720)
-        self.setLayout(self.layout2)
-
 
     def registerHelp(self):
         Password = self.passwordEdit.text()
@@ -37,6 +34,7 @@ class Ui_Reg(QWidget, Ui_Form):
                 open("main/local/user.txt", "w").write(str(idn))
                 self.storage = ui_storage()
                 self.storage.show()
+                self.hide()
 
     def Error_PopUp(self, error):
         popup = QMessageBox()

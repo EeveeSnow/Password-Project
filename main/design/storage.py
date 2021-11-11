@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Storage.ui'
+# Form implementation generated from reading ui file '.\Storage.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -73,6 +73,13 @@ class Ui_Form(object):
 "color: #707070")
         self.showButton.setObjectName("showButton")
         self.horizontalLayout.addWidget(self.showButton)
+        self.txtButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.txtButton.setStyleSheet("background-color: #ededed; border: 1px solid grey;\n"
+"     border-radius: 5px;\n"
+"font: 8pt \"Segoe UI\";\n"
+"color: #707070")
+        self.txtButton.setObjectName("txtButton")
+        self.horizontalLayout.addWidget(self.txtButton)
         self.logButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.logButton.setStyleSheet("background-color: #ededed; border: 1px solid grey;\n"
 "     border-radius: 5px;\n"
@@ -98,4 +105,5 @@ class Ui_Form(object):
         self.deleteButton.setText(_translate("Form", "Delete"))
         self.searchButton.setText(_translate("Form", "Search"))
         self.showButton.setText(_translate("Form", "Show Passwords"))
+        self.txtButton.setText(_translate("Form", "Convert table to txt"))
         self.logButton.setText(_translate("Form", "Log Out"))

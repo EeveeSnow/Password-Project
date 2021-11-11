@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Register.ui'
+# Form implementation generated from reading ui file '.\Register.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.6
 #
@@ -96,6 +96,19 @@ class Ui_Form(object):
 "font: 40pt \"Segoe UI\";\n"
 "color: #707070")
         self.masterEdit.setObjectName("masterEdit")
+        # self.cancelButton = QtWidgets.QPushButton(Form)
+        # self.cancelButton.setGeometry(QtCore.QRect(310, 554, 300, 70))
+        # font = QtGui.QFont()
+        # font.setFamily("Segoe UI")
+        # font.setPointSize(40)
+        # font.setStyleStrategy(QtGui.QFont.PreferAntialias)
+#         self.cancelButton.setFont(font)
+#         self.cancelButton.setAutoFillBackground(False)
+#         self.cancelButton.setStyleSheet("background-color: #ededed; border: 1px solid grey;\n"
+# "     border-radius: 35px;\n"
+# "font: 40pt \"Segoe UI\";\n"
+# "color: #707070")
+#         self.cancelButton.setObjectName("cancelButton")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -103,7 +116,8 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.loginButton.setText(_translate("Form", "Login"))
+        self.loginButton.setText(_translate("Form", "Register"))
         self.label.setText(_translate("Form", "Login:"))
         self.label_2.setText(_translate("Form", "Password:"))
         self.label_3.setText(_translate("Form", "Master Key:"))
+        # self.cancelButton.setText(_translate("Form", "Go to login"))
