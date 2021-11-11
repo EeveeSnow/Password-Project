@@ -148,9 +148,16 @@ class ui_Delete(QDialog, delete_ui):
     
     def dele(self):
         idr = self.siteEdit.text()
-        deletor(self.id, self.hundle, idr).delet()
-        self.hide()
+        if self.isint(idr):
+            deletor(self.id, self.hundle, idr).delet()
+            self.hide()
 
+    def isint(self, s):
+            try:
+                int(s)
+                return True
+            except ValueError:
+                return False
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

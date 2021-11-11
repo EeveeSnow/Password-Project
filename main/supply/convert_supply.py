@@ -16,6 +16,6 @@ class to_txt():
             text.write("_" * 100 + "\n")
             text.write(f"|      mail:     |{self.hundle[i][1]:^81}|\n".format(self.hundle[i]))
             text.write("_" * 100 + "\n")
-            text.write(f"|      pas:      |{self.pas[i]:^81}|\n".format(self.pas[2]))
+            text.write(f"|      pas:      |{self.pas[i]:^81}|\n".format(self.pas))
         text.close()
 
